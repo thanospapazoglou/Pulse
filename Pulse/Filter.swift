@@ -15,17 +15,17 @@ import Foundation
 
 private let numberOfZeros: Int = 10
 private let numberOfPoles: Int = 10
-private let gain: Float = 1.894427025e+01
+private let gain: Double = 1.894427025e+01
 
 /*
  For more information head over to http://www-users.cs.york.ac.uk/~fisher/mkfilter/
  */
 
 class Filter: NSObject {
-    var xv = [Float](repeating: 0.0, count: numberOfZeros + 1)
-    var yv = [Float](repeating: 0.0, count: numberOfPoles + 1)
+    var xv = [Double](repeating: 0.0, count: numberOfZeros + 1)
+    var yv = [Double](repeating: 0.0, count: numberOfPoles + 1)
 
-    func processValue(value: Float) -> Float {
+    func processValue(value: Double) -> Double {
         xv[0] = xv[1]
         xv[1] = xv[2]
         xv[2] = xv[3]
