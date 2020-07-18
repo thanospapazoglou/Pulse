@@ -27,7 +27,7 @@ The pulse detector gives us a threshold for pulse to -60 in order to know when t
 - Xcode 10.0+
 
 ## 📲 Installation
-1. Download the project and build it with your developement team.  
+1. Download the project and build it with your development team.  
 2. Congratulations 🎉!
 
 ## 🙏 Contribution
