@@ -117,5 +117,14 @@ class HeartRateManager: NSObject {
 }
 
 extension HeartRateManager: AVCaptureVideoDataOutputSampleBufferDelegate {
-    
+    // MARK: - Export buffer from video frame
+    func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        if connection.videoOrientation != .portrait {
+            connection.videoOrientation = .portrait
+            return
+        }
+        if let imageBufferHandler = imageBufferHandler {
+            imageBufferHandler(sampleBuffer)
+        }
+    }
 }
