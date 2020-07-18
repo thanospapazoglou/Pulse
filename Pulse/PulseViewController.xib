@@ -10,7 +10,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PulseViewController" customModule="Pulse" customModuleProvider="target">
             <connections>
                 <outlet property="previewLayer" destination="PZR-2a-5ta" id="fam-nd-GjJ"/>
-                <outlet property="previewLayerShadowView" destination="PZR-2a-5ta" id="F1z-L5-H51"/>
+                <outlet property="previewLayerShadowView" destination="B1a-Pr-HU8" id="Zsz-g8-5xa"/>
+                <outlet property="pulseLabel" destination="Veb-Ef-eQD" id="LGo-Ur-daz"/>
+                <outlet property="thresholdLabel" destination="Sj7-Ty-7T5" id="A7M-26-09a"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -37,14 +39,34 @@
                         <constraint firstAttribute="height" constant="120" id="qcp-w9-mle"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veb-Ef-eQD">
+                    <rect key="frame" x="12" y="537" width="390" height="0.0"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sj7-Ty-7T5">
+                    <rect key="frame" x="12" y="561" width="390" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="Sj7-Ty-7T5" firstAttribute="top" secondItem="Veb-Ef-eQD" secondAttribute="bottom" constant="24" id="7xV-px-hzz"/>
+                <constraint firstItem="Sj7-Ty-7T5" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="CY3-i3-Kku"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sj7-Ty-7T5" secondAttribute="trailing" constant="12" id="G7B-nU-zJ8"/>
                 <constraint firstItem="B1a-Pr-HU8" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="KIL-kd-ypR"/>
+                <constraint firstItem="Sj7-Ty-7T5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="gLS-Qj-bnW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Veb-Ef-eQD" secondAttribute="trailing" constant="12" id="h3t-UC-GN4"/>
                 <constraint firstItem="B1a-Pr-HU8" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ooO-2X-lin"/>
+                <constraint firstItem="Veb-Ef-eQD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="p3F-XS-7ZE"/>
+                <constraint firstItem="Veb-Ef-eQD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="sst-Jf-pmw"/>
+                <constraint firstItem="Veb-Ef-eQD" firstAttribute="top" secondItem="B1a-Pr-HU8" secondAttribute="bottom" constant="24" id="vVm-c5-f0u"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="129"/>
+            <point key="canvasLocation" x="137.68115942028987" y="128.57142857142856"/>
         </view>
     </objects>
 </document>
