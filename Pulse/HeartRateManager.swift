@@ -48,6 +48,14 @@ class HeartRateManager: NSObject {
         super.init()
         videoDevice = cameraType.captureDevice()
         
+        // MARK: - Setup Video Format
+        do {
+            captureSession.sessionPreset = .low
+            if let _ = preferredSpec {
+                
+            }
+        }
+        
         // MARK: - Setup video device input
         let videoDeviceInput: AVCaptureDeviceInput
         do {
