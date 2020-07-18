@@ -36,5 +36,36 @@ struct VideoSpec {
 typealias ImageBufferHandler = ((_ imageBuffer: CMSampleBuffer) -> ())
 
 class HeartRateManager: NSObject {
-
+    private let captureSession = AVCaptureSession()
+    private var videoDevice: AVCaptureDevice!
+    private var videoConnection: AVCaptureConnection!
+    private var audioConnection: AVCaptureConnection!
+    private var previewLayer: AVCaptureVideoPreviewLayer?
+    
+    var imageBufferHandler: ImageBufferHandler?
+    
+    init(cameraType: CameraType, preferredSpec: VideoSpec?, previewContainer: CALayer?) {
+        super.init()
+        videoDevice = cameraType.captureDevice()
+        
+        // MARK: - Setup video device input
+        let videoDeviceInput: AVCaptureDeviceInput
+        do {
+            videoDeviceInput = try AVCaptureDeviceInput(device: videoDevice)
+        } catch let error {
+            fatalError("Could not create AVCaptureDeviceInput instance with error: \(error).")
+        }
+        guard captureSession.canAddInput(videoDeviceInput) else { fatalError() }
+        captureSession.addInput(videoDeviceInput)
+        
+        // MARK: - Setup preview layer
+        if let previewContainer = previewContainer {
+            let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+            previewLayer.frame = previewContainer.bounds
+            previewLayer.contentsGravity = CALayerContentsGravity.resizeAspectFill
+            previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            previewContainer.insertSublayer(previewLayer, at: 0)
+            self.previewLayer = previewLayer
+        }
+    }
 }
