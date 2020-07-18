@@ -44,5 +44,7 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>Pulse uses the camera to measure your heart rate.</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>
