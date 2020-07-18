@@ -51,8 +51,9 @@ class HeartRateManager: NSObject {
         // MARK: - Setup Video Format
         do {
             captureSession.sessionPreset = .low
-            if let _ = preferredSpec {
-                
+            if let preferredSpec = preferredSpec {
+                // Update the format with a preferred fps
+                videoDevice.updateFormatWithPreferredVideoSpec(preferredSpec: preferredSpec)
             }
         }
         
