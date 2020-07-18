@@ -13,9 +13,9 @@
 
 import Foundation
 
-let NZEROS: Int = 10
-let NPOLES: Int = 10
-let GAIN: Float = 1.894427025e+01
+private let NZEROS: Int = 10
+private let NPOLES: Int = 10
+private let GAIN: Float = 1.894427025e+01
 
 /*
  For more information head over to http://www-users.cs.york.ac.uk/~fisher/mkfilter/

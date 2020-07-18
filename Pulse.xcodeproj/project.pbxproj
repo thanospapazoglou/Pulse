@@ -19,6 +19,7 @@
 		C34CD92924C2F65600FA2490 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD92824C2F65600FA2490 /* AVCaptureDevice+Extensions.swift */; };
 		C34CD92C24C2F7D300FA2490 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD92B24C2F7D300FA2490 /* ColorUtils.swift */; };
 		C34CD92F24C2F91800FA2490 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD92E24C2F91800FA2490 /* Filter.swift */; };
+		C34CD93124C2FAC000FA2490 /* PulseDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD93024C2FAC000FA2490 /* PulseDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C34CD92824C2F65600FA2490 /* AVCaptureDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extensions.swift"; sourceTree = "<group>"; };
 		C34CD92B24C2F7D300FA2490 /* ColorUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		C34CD92E24C2F91800FA2490 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		C34CD93024C2FAC000FA2490 /* PulseDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +112,7 @@
 				C34CD92A24C2F7C100FA2490 /* Utilities */,
 				C34CD92724C2F64400FA2490 /* Extensions */,
 				C34CD92424C2F13B00FA2490 /* Managers */,
-				C34CD92D24C2F90900FA2490 /* Filter */,
+				C34CD92D24C2F90900FA2490 /* Pulse Detectoer Helpers */,
 				C34CD91F24C2F09B00FA2490 /* View Controllers */,
 				C34CD8EF24C2EF8400FA2490 /* AppDelegate.swift */,
 				C34CD8F124C2EF8400FA2490 /* SceneDelegate.swift */,
@@ -172,12 +174,13 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		C34CD92D24C2F90900FA2490 /* Filter */ = {
+		C34CD92D24C2F90900FA2490 /* Pulse Detectoer Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				C34CD92E24C2F91800FA2490 /* Filter.swift */,
+				C34CD93024C2FAC000FA2490 /* PulseDetector.swift */,
 			);
-			name = Filter;
+			name = "Pulse Detectoer Helpers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C34CD92F24C2F91800FA2490 /* Filter.swift in Sources */,
+				C34CD93124C2FAC000FA2490 /* PulseDetector.swift in Sources */,
 				C34CD92624C2F14700FA2490 /* HeartRateManager.swift in Sources */,
 				C34CD92224C2F0B400FA2490 /* PulseViewController.swift in Sources */,
 				C34CD8F024C2EF8400FA2490 /* AppDelegate.swift in Sources */,
