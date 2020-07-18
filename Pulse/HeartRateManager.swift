@@ -88,6 +88,32 @@ class HeartRateManager: NSObject {
         captureSession.addOutput(videoDataOutput)
         videoConnection = videoDataOutput.connection(with: .video)
     }
+    
+    func startCapture() {
+        #if DEBUG
+        print(#function + "\(self.classForCoder)/")
+        #endif
+        if captureSession.isRunning {
+            #if DEBUG
+            print("Capture Session is already running 🏃‍♂️.")
+            #endif
+            return
+        }
+        captureSession.startRunning()
+    }
+    
+    func stopCapture() {
+        #if DEBUG
+        print(#function + "\(self.classForCoder)/")
+        #endif
+        if !captureSession.isRunning {
+            #if DEBUG
+            print("Capture Session has already stopped 🛑.")
+            #endif
+            return
+        }
+        captureSession.stopRunning()
+    }
 }
 
 extension HeartRateManager: AVCaptureVideoDataOutputSampleBufferDelegate {
