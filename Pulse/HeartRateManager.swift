@@ -75,5 +75,21 @@ class HeartRateManager: NSObject {
             previewContainer.insertSublayer(previewLayer, at: 0)
             self.previewLayer = previewLayer
         }
+        
+        // MARK: - Setup video output
+        let videoDataOutput = AVCaptureVideoDataOutput()
+        videoDataOutput.videoSettings = [kCVPixelBufferPixelFormatTypeKey : NSNumber(value: kCVPixelFormatType_32BGRA)] as [String : Any]
+        videoDataOutput.alwaysDiscardsLateVideoFrames = true
+        let queue = DispatchQueue(label: "com.covidsense.videosamplequeue")
+        videoDataOutput.setSampleBufferDelegate(self, queue: queue)
+        guard captureSession.canAddOutput(videoDataOutput) else {
+            fatalError()
+        }
+        captureSession.addOutput(videoDataOutput)
+        videoConnection = videoDataOutput.connection(with: .video)
     }
+}
+
+extension HeartRateManager: AVCaptureVideoDataOutputSampleBufferDelegate {
+    
 }
