@@ -13,17 +13,17 @@
 
 import Foundation
 
-private let NZEROS: Int = 10
-private let NPOLES: Int = 10
-private let GAIN: Float = 1.894427025e+01
+private let numberOfZeros: Int = 10
+private let numberOfPoles: Int = 10
+private let gain: Float = 1.894427025e+01
 
 /*
  For more information head over to http://www-users.cs.york.ac.uk/~fisher/mkfilter/
  */
 
 class Filter: NSObject {
-    var xv = [Float](repeating: 0.0, count: NZEROS + 1)
-    var yv = [Float](repeating: 0.0, count: NPOLES + 1)
+    var xv = [Float](repeating: 0.0, count: numberOfZeros + 1)
+    var yv = [Float](repeating: 0.0, count: numberOfPoles + 1)
 
     func processValue(value: Float) -> Float {
         xv[0] = xv[1]
@@ -36,7 +36,7 @@ class Filter: NSObject {
         xv[7] = xv[8]
         xv[8] = xv[9]
         xv[9] = xv[10]
-        xv[10] = value/GAIN
+        xv[10] = value/gain
         
         yv[0] = yv[1]
         yv[1] = yv[2]
