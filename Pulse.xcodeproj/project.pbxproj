@@ -15,6 +15,7 @@
 		C34CD91224C2EF8800FA2490 /* PulseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD91124C2EF8800FA2490 /* PulseUITests.swift */; };
 		C34CD92224C2F0B400FA2490 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD92024C2F0B400FA2490 /* PulseViewController.swift */; };
 		C34CD92324C2F0B400FA2490 /* PulseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34CD92124C2F0B400FA2490 /* PulseViewController.xib */; };
+		C34CD92624C2F14700FA2490 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD92524C2F14700FA2490 /* HeartRateManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C34CD91324C2EF8800FA2490 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C34CD92024C2F0B400FA2490 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
 		C34CD92124C2F0B400FA2490 /* PulseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PulseViewController.xib; sourceTree = "<group>"; };
+		C34CD92524C2F14700FA2490 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		C34CD8EE24C2EF8400FA2490 /* Pulse */ = {
 			isa = PBXGroup;
 			children = (
+				C34CD92424C2F13B00FA2490 /* Managers */,
 				C34CD91F24C2F09B00FA2490 /* View Controllers */,
 				C34CD8EF24C2EF8400FA2490 /* AppDelegate.swift */,
 				C34CD8F124C2EF8400FA2490 /* SceneDelegate.swift */,
@@ -134,6 +137,14 @@
 				C34CD92124C2F0B400FA2490 /* PulseViewController.xib */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C34CD92424C2F13B00FA2490 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C34CD92524C2F14700FA2490 /* HeartRateManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34CD92624C2F14700FA2490 /* HeartRateManager.swift in Sources */,
 				C34CD92224C2F0B400FA2490 /* PulseViewController.swift in Sources */,
 				C34CD8F024C2EF8400FA2490 /* AppDelegate.swift in Sources */,
 				C34CD8F224C2EF8400FA2490 /* SceneDelegate.swift in Sources */,
