@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PulseViewController: UIViewController {
     
@@ -25,6 +26,7 @@ class PulseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initVideoCapture()
     }
 
     override func viewWillLayoutSubviews() {
@@ -32,6 +34,17 @@ class PulseViewController: UIViewController {
         setupPreviewView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        initCaptureSession()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        deinitCaptureSession()
+    }
+    
+    // MARK: - Setup Views
     private func setupPreviewView() {
         previewLayer.layer.cornerRadius = 10.0
         previewLayer.layer.masksToBounds = true
@@ -42,5 +55,28 @@ class PulseViewController: UIViewController {
         previewLayerShadowView.layer.shadowOffset = CGSize(width: 0, height: 3)
         previewLayerShadowView.layer.shadowRadius = 3
         previewLayerShadowView.clipsToBounds = false
+    }
+    
+    // MARK: - Frames Capture Methods
+    private func initVideoCapture() {
+        let specs = VideoSpec(fps: 30, size: CGSize(width: 300, height: 300))
+        heartRateManager = HeartRateManager(cameraType: .back, preferredSpec: specs, previewContainer: previewLayer.layer)
+        heartRateManager.imageBufferHandler = { [unowned self] (_) in
+            
+        }
+    }
+    
+    // MARK: - AVCaptureSession Helpers
+    private func initCaptureSession() {
+        heartRateManager.startCapture()
+    }
+    
+    private func deinitCaptureSession() {
+        heartRateManager.stopCapture()
+    }
+    
+    private func toggleTorch(status: Bool) {
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+        device.toggleTorch(on: status)
     }
 }

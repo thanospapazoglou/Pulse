@@ -16,6 +16,7 @@
 		C34CD92224C2F0B400FA2490 /* PulseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD92024C2F0B400FA2490 /* PulseViewController.swift */; };
 		C34CD92324C2F0B400FA2490 /* PulseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C34CD92124C2F0B400FA2490 /* PulseViewController.xib */; };
 		C34CD92624C2F14700FA2490 /* HeartRateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD92524C2F14700FA2490 /* HeartRateManager.swift */; };
+		C34CD92924C2F65600FA2490 /* AVCaptureDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CD92824C2F65600FA2490 /* AVCaptureDevice+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		C34CD92024C2F0B400FA2490 /* PulseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulseViewController.swift; sourceTree = "<group>"; };
 		C34CD92124C2F0B400FA2490 /* PulseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PulseViewController.xib; sourceTree = "<group>"; };
 		C34CD92524C2F14700FA2490 /* HeartRateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateManager.swift; sourceTree = "<group>"; };
+		C34CD92824C2F65600FA2490 /* AVCaptureDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		C34CD8EE24C2EF8400FA2490 /* Pulse */ = {
 			isa = PBXGroup;
 			children = (
+				C34CD92724C2F64400FA2490 /* Extensions */,
 				C34CD92424C2F13B00FA2490 /* Managers */,
 				C34CD91F24C2F09B00FA2490 /* View Controllers */,
 				C34CD8EF24C2EF8400FA2490 /* AppDelegate.swift */,
@@ -145,6 +148,14 @@
 				C34CD92524C2F14700FA2490 /* HeartRateManager.swift */,
 			);
 			name = Managers;
+			sourceTree = "<group>";
+		};
+		C34CD92724C2F64400FA2490 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C34CD92824C2F65600FA2490 /* AVCaptureDevice+Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +293,7 @@
 				C34CD92224C2F0B400FA2490 /* PulseViewController.swift in Sources */,
 				C34CD8F024C2EF8400FA2490 /* AppDelegate.swift in Sources */,
 				C34CD8F224C2EF8400FA2490 /* SceneDelegate.swift in Sources */,
+				C34CD92924C2F65600FA2490 /* AVCaptureDevice+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
